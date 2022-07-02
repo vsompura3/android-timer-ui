@@ -1,7 +1,7 @@
 {
   "name": "shortstack",
   "version": "1.1.7",
-  "author": "Adam Argyle",
+  "author": "Vaibhav Sompura",
   "description": "rollup & postcss bundler starter",
   "license": "ISC",
   "main": "index.js",
@@ -19,7 +19,8 @@
     "build": "rimraf dist && concurrently npm:build:pre:* && concurrently npm:build:post:*",
     "start": "concurrently --kill-others npm:dev:*",
     "dev": "concurrently --kill-others npm:dev:*",
-    "production": "npm run build && npm run prod:server"
+    "production": "npm run build && npm run prod:server",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "devDependencies": {
     "@ampproject/rollup-plugin-closure-compiler": "0.27.0",
@@ -31,6 +32,7 @@
     "concurrently": "7.0.0",
     "cssnano": "^5.0.17",
     "eslint": "^8.17.0",
+    "gh-pages": "^4.0.0",
     "import-http": "^0.3.1",
     "postcss": "8.4.6",
     "postcss-cli": "9.1.0",

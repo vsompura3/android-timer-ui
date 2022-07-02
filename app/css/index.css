@@ -248,3 +248,7 @@ button {
     fill: var(--surface-1);
   }
 }
+
+.footer {
+  text-align: center;
+}
