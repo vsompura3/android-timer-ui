@@ -52,7 +52,7 @@ body {
 }
 
 .timer {
-  --timer-inline-size: 25rem;
+  --timer-inline-size: 20rem;
 
   max-inline-size: var(--timer-inline-size);
   display: grid;
@@ -75,6 +75,10 @@ body {
   & > footer {
     display: grid;
     place-items: center;
+  }
+
+  @media (width >= 480px) {
+    --timer-inline-size: 25rem;
   }
 }
 
@@ -129,7 +133,7 @@ header {
 }
 
 time {
-  font-size: 2.5rem;
+  font-size: clamp(2.15rem, 6vmin, 2.5rem);
   font-weight: 400;
   font-variant-numeric: tabular-nums;
   color: var(--brand-1);
@@ -157,7 +161,7 @@ time {
 
 .keypad {
   --keypad-row-gap: 2rem;
-  --keypad-col-gap: 3rem;
+  --keypad-col-gap: 4rem;
 
   display: flex;
   flex-wrap: wrap;
@@ -169,6 +173,11 @@ time {
     flex-basis: calc(33.33% - var(--num-gap));
     flex-shrink: 0;
   } */
+
+  @media (width >= 480px) {
+    --keypad-row-gap: 2rem;
+    --keypad-col-gap: 3rem;
+  }
 }
 
 .numkey {
@@ -183,7 +192,7 @@ time {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.75rem;
   border-radius: 50%;
 
   cursor: pointer;
@@ -195,7 +204,7 @@ time {
   transition: background-color 0.5s ease;
 
   @media (width >= 480px) {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
   }
 
   &:is(:focus, :hover) {
